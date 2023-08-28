@@ -28,8 +28,8 @@ function listToHtml(pokemons) {
   pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join("");
 }
 
-async function loadPokemonItems() {
-  await pokeApi
+function loadPokemonItems() {
+  return pokeApi
     .getPokemons(offset, limit)
     .then(listToHtml)
     .catch((error) => console.error(error));
